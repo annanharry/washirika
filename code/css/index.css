@@ -1,0 +1,11 @@
+body {
+    background-image: url("../pictures/meeting\ in\ progress.jpg");
+    background-size: cover;
+}
+.topnav {
+    background-color: aliceblue;
+}
+.topnav a{
+    float: right;
+    background-color: aliceblue;
+  }
