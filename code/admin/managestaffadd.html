@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Washirika</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            padding: 20px 10px;
+            font-size: 20px;
+            gap: 5px;
+            background-color: #2db9b9;
+            width: 95vw;
+            height: 90vh
+        }
+        .grid-container > div {
+            background-color: #d6f5f5;
+            padding: 10px 5px;
+            font-size: 18px;
+        }
+        .item1 {
+            grid-area: 1 / 1 / span 1 / span 2;
+            text-align: center;
+        }
+        .item2 {
+            grid-area: 2 / 1 / 3 / span 2;
+            text-align: center;
+        }
+        .item11 {
+            grid-area: 7 / 2 / span 1 / span 1;
+        }
+        .item12 {
+            grid-area: 8 / 1 / span 1 / span 2;
+            font-size: 10px;
+        }
+        input, select, textarea {
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+            input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form action="add.php" method="post">
+        <div class="grid-container">
+            <div class="item1">
+                <h3>Washirika SACCO</h3>
+            </div>
+            <div class="item2">
+                <h5>Add New Staff</h5>
+            </div>
+            <div>
+                <label for="username">Username</label>
+            </div>
+            <div>
+                <input type="text" name="susername" class="box" placeholder="username"><br><br>
+            </div>
+            <div>
+                <label for="staff">Role</label>
+            </div>
+            <div>
+                <input type="text" name="stype" class="box" placeholder="Role"><br><br>
+            </div>
+            <div>
+                <label for="password">Password</label>
+            </div>
+            <div>
+                <input type="password" name="spassword" class="box" placeholder="password"><br><br>
+            </div>
+            <div>
+                <label for="password">Confirm password</label>
+            </div>
+            <div>
+                <input type="password" name="sconfirmpassword" class="box" placeholder="retype password"><br><br>
+            </div>
+            <div class="item11">
+                <input type = "submit" value = " Submit "/><br />
+            </div>
+            <div class="item12">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, cupiditate eius dolor debitis sed eligendi excepturi dignissimos possimus, rem iure aliquam quibusdam adipisci sunt aperiam magni corrupti ipsa fugit odit?
+            </div>
+        </div>
+    </form>
+</body>
+</html>
