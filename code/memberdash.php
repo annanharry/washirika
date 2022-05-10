@@ -98,21 +98,55 @@
         </div>
         <div>
             Share Capital
+            <?php
+                include "ses/connect.php";
+                $search = $_POST['search'];
+                if ($conn->connect_error){
+                    die("Connection failed: ". $conn->connect_error);
+                }
+                $sql = "SELECT * FROM shares WHERE member_id LIKE '%$search%'";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0){
+                    while($row = $result->fetch_assoc()){
+                        echo $row["shares_amount"];   
+                    }
+                } else {
+                    echo "0 ";
+                }
+                $conn->close();
+            ?>
         </div>
         <div>
             Account Balance
+            <?php
+                include "ses/connect.php";
+                $search = $_POST['search'];
+                if ($conn->connect_error){
+                    die("Connection failed: ". $conn->connect_error);
+                }
+                $sql = "SELECT * FROM accounts WHERE member_id LIKE '%$search%'";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0){
+                    while($row = $result->fetch_assoc()){
+                        echo $row["member_id"];   
+                    }
+                } else {
+                    echo "0";
+                }
+                $conn->close();
+            ?>
         </div>
         <div>
-            Witdraw 
+            <a href="">Witdraw</a>  
         </div>
         <div>
-            Deposit
+            <a href="">Deposit</a> 
         </div>
         <div>
-            Repay loan
+            <a href="">Repay loan</a> 
         </div>
          <div>
-             Request loan
+            <a href="">Request loan</a> 
          </div>
     </div>
 </body>
