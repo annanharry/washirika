@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Washirika</title>
+    <style>
+        .grid-container{
+            display: grid;
+            grid-template-columns: 40vw 40vw;
+            justify-content: center;
+            background-color: #2db9b9;
+            gap: 10px;
+            padding: 10px;
+            height: 95vh;
+        }
+        .grid-container>div {
+            background-color: #d6f5f5;
+        }
+        .item1 {
+            grid-area: 1 / 1 / span 1 / span 2;
+            text-align: center;
+        }
+        .item2 {
+            grid-area: 2 / 1 / span 1 / span 2;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <?php
+    
+        include "search.php";
+
+    ?>
+    <div class="grid-container">
+        <div class="item1">
+            <h3>Washirika SACCO</h3>
+        </div>
+        <div class="item2">
+            Member Account
+        </div>
+        <div>
+            Member ID
+        </div>
+        <div>
+            Name
+        </div>
+        <div>
+            Share Capital
+        </div>
+        <div>
+            Account Balance
+        </div>
+        <div>
+            Witdraw 
+        </div>
+        <div>
+            Deposit
+        </div>
+        <div>
+            Repay loan
+        </div>
+         <div>
+             Request loan
+         </div>
+    </div>
+</body>
+</html>
