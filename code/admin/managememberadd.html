@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Washirika</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            padding: 20px 10px;
+            font-size: 20px;
+            gap: 5px;
+            background-color: #2db9b9;
+        }
+        .grid-container > div {
+            background-color: #d6f5f5;
+            padding: 10px 5px;
+            font-size: 18px;
+        }
+        .item1 {
+            grid-area: 1/1/span 1/span 2;
+        }
+        .item2 {
+            grid-area: 2/1/span 1/span 2;
+        }
+        .item3 {
+            grid-area: 3/1/4/2;
+        }
+        .item11 {
+            grid-area: 7/1/8/3;
+            align-items: center;
+        }
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form action="addmember.php" method="post"></form>
+    <div class="grid-container">
+        <div class="item1">
+            <h4>Washirika SACCO</h4>
+        </div>
+        <div class="item2">
+            Add a new member
+        </div>
+            <div class="item3">
+                <label for="firstname">First Name</label>
+            </div>
+            <div class="item4">
+                <input type="text" name="firstname" placeholder="First name">
+            </div>
+            <div>
+                <label for="surname">Surname</label>
+            </div>
+            <div>
+                <input type="text" name="surname" placeholder="Surname">
+            </div>
+            <div>
+                <label for="othernames">Other names</label>
+            </div>
+            <div>
+                <input type="text" name="othernames" placeholder="Other names">
+            </div>
+            <div>
+                <label for="employment">employment</label>
+            </div>
+            <div>
+                <input type="text" name="employment" id="" placeholder="Employment">
+            </div>
+            <div class="item11">
+                <input type="submit" value="Add Member">
+            </div>
+        </div> 
+    </form>
+</body>
+</html>

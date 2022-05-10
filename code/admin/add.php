@@ -8,5 +8,5 @@
 
     $sql = mysqli_query($conn, "INSERT INTO logins(username, password, type)
     VALUES ('$susername', '$smd5password', '$stype')");
-
+    header("location:managestaffadd.html")
 ?>
