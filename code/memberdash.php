@@ -8,7 +8,7 @@
     <style>
         .grid-container{
             display: grid;
-            grid-template-columns: 40vw 40vw;
+            grid-template-columns: 25vw 25vw 25vw;
             justify-content: center;
             background-color: #2db9b9;
             gap: 10px;
@@ -19,21 +19,16 @@
             background-color: #d6f5f5;
         }
         .item1 {
-            grid-area: 1 / 1 / span 1 / span 2;
+            grid-area: 1 / 1 / 2 / 4;
             text-align: center;
         }
         .item2 {
-            grid-area: 2 / 1 / span 1 / span 2;
+            grid-area: 2 / 1 / 3 / 4;
             text-align: center;
         }
     </style>
 </head>
 <body>
-    <?php
-    
-        include "search.php";
-
-    ?>
     <div class="grid-container">
         <div class="item1">
             <h3>Washirika SACCO</h3>
@@ -42,10 +37,64 @@
             Member Account
         </div>
         <div>
-            Member ID
+            Member ID:
+            <?php
+                include "ses/connect.php";
+                $search = $_POST['search'];
+                if ($conn->connect_error){
+                    die("Connection failed: ". $conn->connect_error);
+                }
+                $sql = "SELECT * FROM members WHERE member_id LIKE '%$search%'";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0){
+                    while($row = $result->fetch_assoc()){
+                        echo $row["member_id"];   
+                    }
+                } else {
+                    echo "0 records";
+                }
+                $conn->close();
+            ?>
         </div>
         <div>
-            Name
+            Name:
+            <?php
+                include "ses/connect.php";
+                $search = $_POST['search'];
+                if ($conn->connect_error){
+                    die("Connection failed: ". $conn->connect_error);
+                }
+                $sql = "SELECT * FROM members WHERE member_id LIKE '%$search%'";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0){
+                    while($row = $result->fetch_assoc()){
+                        echo $row["first_name"]." ".$row["surname"]." ".$row["other_names"];   
+                    }
+                } else {
+                    echo "0 records";
+                }
+                $conn->close();
+            ?>
+        </div>
+        <div>
+            Employment:
+            <?php
+                include "ses/connect.php";
+                $search = $_POST['search'];
+                if ($conn->connect_error){
+                    die("Connection failed: ". $conn->connect_error);
+                }
+                $sql = "SELECT * FROM members WHERE member_id LIKE '%$search%'";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0){
+                    while($row = $result->fetch_assoc()){
+                        echo $row["Employment"];   
+                    }
+                } else {
+                    echo "0 records";
+                }
+                $conn->close();
+            ?>
         </div>
         <div>
             Share Capital
