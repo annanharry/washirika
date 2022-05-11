@@ -26,6 +26,32 @@
             grid-area: 2 / 1 / 3 / 4;
             text-align: center;
         }
+        .dropbtn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {background-color: #f1f1f1;}
+        .dropdown:hover .dropdown-content {display: block;}
+        .dropdown:hover .dropbtn {background-color: #3e8e41;}
     </style>
 </head>
 <body>
@@ -136,14 +162,24 @@
                 $conn->close();
             ?>
         </div>
-        <div>
-            <a href="">Witdraw</a>  
+        <div class="dropdown">
+            <button class="dropbtn">Withdraw</button>
+            <Div class="dropdown-content">
+                <a href="withdraw.php">From Shares</a>
+                <a href="withdrawshare.php">From Account</a>
+            </Div> 
         </div>
-        <div>
-            <a href="">Deposit</a> 
+        <div class="dropdown">
+            <button class="dropbtn">Deposit</button>
+            <Div class="dropdown-content">
+                <a href="postdepositshares.php">Shares</a>
+                <a href="postdepositaccount.php">Account</a>
+            </Div> 
         </div>
-        <div>
-            <a href="">Repay loan</a> 
+        <div class="dropdown">
+            <button class="dropbtn">
+                <a href="repay.php">Repay Loan</a>
+            </button>
         </div>
          <div>
             <a href="">Request loan</a> 
