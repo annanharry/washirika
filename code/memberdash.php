@@ -26,6 +26,10 @@
             grid-area: 2 / 1 / 3 / 4;
             text-align: center;
         }
+        .item12 {
+            grid-area: 6/2/7/3;
+            text-align: center;
+        }
         .dropbtn {
             background-color: #04AA6D;
             color: white;
@@ -154,7 +158,27 @@
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0){
                     while($row = $result->fetch_assoc()){
-                        echo $row["member_id"];   
+                        echo $row["account_balance"];   
+                    }
+                } else {
+                    echo "0";
+                }
+                $conn->close();
+            ?>
+        </div>
+        <div>
+            Loan Balance
+            <?php
+                include "ses/connect.php";
+                $search = $_POST['search'];
+                if ($conn->connect_error){
+                    die("Connection failed: ". $conn->connect_error);
+                }
+                $sql = "SELECT * FROM loans WHERE member_id LIKE '%$search%'";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0){
+                    while($row = $result->fetch_assoc()){
+                        echo $row["loan_amount"];   
                     }
                 } else {
                     echo "0";
@@ -181,8 +205,8 @@
                 <a href="repay.php">Repay Loan</a>
             </button>
         </div>
-         <div>
-            <a href="">Request loan</a> 
+         <div class="item12">
+            <a href="loanrequest.php">Request loan</a> 
          </div>
     </div>
 </body>
