@@ -103,6 +103,9 @@ include "ses/connect.php";
             <div>
                 <input type="text" name="guaranteeamount8" placeholder="amount">
             </div>
+            <div>
+                <input type="submit" value="Add">
+            </div>
         </div>
     </form>
 </body>
