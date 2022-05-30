@@ -30,7 +30,7 @@
             text-align: center;
         }
         .item9 {
-            grid-area: 6/2/7/3;
+            grid-area: 7/2/8/3;
         }
         input, select, textarea {
             width: 90%;
@@ -67,6 +67,12 @@
             </div>
             <div>
                 <input type="text" name="memberid" placeholder="Member ID">
+            </div>
+            <div>
+                <label for="account_balance">Account Balance</label>
+            </div>
+            <div>
+                <p>Ksh. </p>
             </div>
             <div>
                 <label for="amount">Amount</label>

@@ -15,6 +15,7 @@
         }
         .grid-container > div {
             background-color: #d6f5f5;
+            height: 30px;
         }
         .item1 {
             grid-area: 1/1/2/3;
@@ -25,7 +26,7 @@
             text-align: center;
         }
         .item7 {
-            grid-area: 5/1/6/3;
+            grid-area: 7/2/8/3;
         }
     </style>
 </head>
@@ -39,37 +40,28 @@
                 Loan Application Form
             </div>
             <div class="item3">
-                Member ID: 
-                <?php
-                include "ses/connect.php";
-                //include "memberdash.php";
-                $search = $_POST['search'];
-                if ($conn->connect_error){
-                    die("Connection failed: ". $conn->connect_error);
-                }
-                $sql = "SELECT * FROM members WHERE member_id LIKE '%$search%'";
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0){
-                    while($row = $result->fetch_assoc()){
-                        echo $row["member_id"];   
-                    }
-                } else {
-                    echo "0 records";
-                }
-                $conn->close();
-                ?>                
-                <br>
-                Name: <br>
-                <a href="loanlimit.php">Show Limit</a>
+                Loan type             
             </div>
             <div class="item4">
-                Loan Limit:
+                <input type="text" name="loan_type" >
+            </div>
+            <div>
+                <label for="limit">Limit</label>
+            </div>
+            <div>
+                Ksh.
             </div>
             <div class="item5">
                 Amount requested
             </div>
             <div class="item6">
                 <input type="text" name="loanrequest" placeholder="Input Amount">
+            </div>
+            <div>
+                Instalments
+            </div>
+            <div>
+                Ksh.
             </div>
             <div class="item7">
                 <input type="submit" value="Apply">

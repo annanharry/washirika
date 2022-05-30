@@ -33,7 +33,7 @@
             grid-area: 7 / 2 / span 1 / span 1;
         }
         .item12 {
-            grid-area: 8 / 1 / span 1 / span 2;
+            grid-area: 8 / 2 / span 1 / span 1;
             font-size: 10px;
         }
         input, select, textarea {
@@ -65,13 +65,19 @@
                 <h3>Washirika SACCO</h3>
             </div>
             <div class="item2">
-                <h5>Add New Staff</h5>
+                <h5>Register Staff</h5>
             </div>
             <div>
-                <label for="username">Username</label>
+                <label for="national_id">National ID</label>
             </div>
             <div>
-                <input type="text" name="susername" class="box" placeholder="username"><br><br>
+                <input type="text" name="national_id" class="box"   placeholder="National ID number">
+            </div>
+            <div>
+                <label for="username">Name</label>
+            </div>
+            <div>
+                <input type="text" name="susername" class="box" placeholder="name"><br><br>
             </div>
             <div>
                 <label for="staff">Role</label>
@@ -80,22 +86,19 @@
                 <input type="text" name="stype" class="box" placeholder="Role"><br><br>
             </div>
             <div>
+                <label for="username">Username</label>
+            </div>
+            <div>
+                <input type="text" name="name" class="box" placeholder="username">
+            </div>
+            <div>
                 <label for="password">Password</label>
             </div>
             <div>
                 <input type="password" name="spassword" class="box" placeholder="password"><br><br>
             </div>
-            <div>
-                <label for="password">Confirm password</label>
-            </div>
-            <div>
-                <input type="password" name="sconfirmpassword" class="box" placeholder="retype password"><br><br>
-            </div>
-            <div class="item11">
-                <input type = "submit" value = "Add"/><br />
-            </div>
             <div class="item12">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, cupiditate eius dolor debitis sed eligendi excepturi dignissimos possimus, rem iure aliquam quibusdam adipisci sunt aperiam magni corrupti ipsa fugit odit?
+                <input type = "submit" value = "Add"/><br />
             </div>
         </div>
     </form>

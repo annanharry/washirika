@@ -13,10 +13,10 @@
             background-color: #2db9b9;
             gap: 10px;
             padding: 10px;
-            height: 95vh;
         }
         .grid-container>div {
             background-color: #d6f5f5;
+            height: 50px;
         }
         .item1 {
             grid-area: 1 / 1 / 2 / 4;

@@ -21,15 +21,17 @@
         }
         .item1 {
             grid-area: 1/1/span 1/span 2;
+            text-align: center;
         }
         .item2 {
             grid-area: 2/1/span 1/span 2;
+            text-align: center;
         }
         .item3 {
             grid-area: 3/1/4/2;
         }
         .item11 {
-            grid-area: 7/1/8/3;
+            grid-area: 8/1/9/3;
             align-items: center;
         }
         input[type=submit] {
@@ -57,28 +59,34 @@
                     Add a new member
                 </div>
                 <div class="item3">
-                    <label for="firstname">First Name</label>
+                    <label for="national_id">Natioal ID</label>
                 </div>
                 <div class="item4">
-                    <input type="text" name="firstname" placeholder="First name">
+                    <input type="text" name="national_id" placeholder="National ID Number">
                 </div>
                 <div>
-                    <label for="surname">Surname</label>
+                    <label for="name">Name</label>
                 </div>
                 <div>
-                    <input type="text" name="surname" placeholder="Surname">
+                    <input type="text" name="name" placeholder="Name">
                 </div>
                 <div>
-                    <label for="othernames">Other names</label>
+                    <label for="employment">Employment</label>
                 </div>
                 <div>
-                    <input type="text" name="othernames" placeholder="Other names">
+                    <input type="text" name="employment" placeholder="Employment">
                 </div>
                 <div>
-                    <label for="employment">employment</label>
+                    <label for="phone_numbeer">Phone Number</label>
                 </div>
                 <div>
-                    <input type="text" name="employment" id="" placeholder="Employment">
+                    <input type="text" name="phone_numbeer" id="" placeholder="Phone Number">
+                </div>
+                <div>
+                    <label for="date_of_birth">Date of Birth</label>
+                </div>
+                <div>
+                    <input type="date" name="date_of_birth" placeholder="Date of Birth">
                 </div>
                 <div class="item11">
                     <input type="submit" value="Add Member">
