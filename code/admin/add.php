@@ -1,13 +1,15 @@
 <?php
-    include "../ses/connect.php";
+    include "../phponly/connect.php";
 
-    $susername = $_POST['susername'];
-    $spassword = $_POST['spassword'];
-    $stype = $_POST['stype'];
-    $smd5password = md5($spassword);
+    $national_id = $_POST['national_id'];
+    $name = $_POST['name'];
+    $role = $_POST['role'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $md5password = md5($password);
 
-    $sql = mysqli_query($conn, "INSERT INTO logins(username, password, type)
-    VALUES ('$susername', '$smd5password', '$stype')");
+    $sql = mysqli_query($conn, "INSERT INTO staff(name, national_id, role, username, password)
+    VALUES ('$name','$national_id', '$role', '$username','$md5password')");
     
     header("location:managestaffadd.html")
 ?>

@@ -1,14 +1,15 @@
 <?php
 
-include "../ses/connect.php";
+include "../phponly/connect.php";
 
-$firstname = $_POST['firstname'];
-$surname = $_POST['surname'];
-$othernames = $_POST['othernames'];
+$national_id = $_POST['national_id'];
+$name = $_POST['name'];
 $employment = $_POST['employment'];
+$phone_number = $_POST['phone_number'];
+$date_of_birth = $_POST['date_of_birth'];
 
-$sql = mysqli_query($conn, "INSERT INTO members(member_id_code, first_name, surname, other_names, Employment)
-    VALUES ('M','$firstname','$surname','$othernames','$employment')");
+$sql = mysqli_query($conn, "INSERT INTO members(national_id, name, phone_number, employment, date_of_birth)
+    VALUES ('$national_id','$name','$phone_number','$employment','$date_of_birth')");
 
 header("location:managememberadd.html");
 
