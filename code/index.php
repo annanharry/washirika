@@ -2,6 +2,8 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Washirika SACCO</title>
+<link rel="icon" type="image/x-icon" href="../pictures/favicon.ico">
 <style>
     .background {
         background-image: url(../pictures/meeting_in_progress.jpg);
