@@ -40,7 +40,7 @@
                 Loan Application Form
             </div>
             <div class="item3">
-                Loan type             
+                <label for="">Loan type</label>             
             </div>
             <div class="item4">
                 <input type="text" name="loan_type" >

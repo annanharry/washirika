@@ -69,7 +69,7 @@
         <div>
             Member ID:
             <?php
-                include "ses/connect.php";
+                include "phponly/connect.php";
                 $search = $_POST['search'];
                 if ($conn->connect_error){
                     die("Connection failed: ". $conn->connect_error);
@@ -89,7 +89,7 @@
         <div>
             Name:
             <?php
-                include "ses/connect.php";
+                include "phponly/connect.php";
                 $search = $_POST['search'];
                 if ($conn->connect_error){
                     die("Connection failed: ". $conn->connect_error);
@@ -98,7 +98,7 @@
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0){
                     while($row = $result->fetch_assoc()){
-                        echo $row["first_name"]." ".$row["surname"]." ".$row["other_names"];   
+                        echo $row["name"];   
                     }
                 } else {
                     echo "0 records";
@@ -109,7 +109,7 @@
         <div>
             Employment:
             <?php
-                include "ses/connect.php";
+                include "phponly/connect.php";
                 $search = $_POST['search'];
                 if ($conn->connect_error){
                     die("Connection failed: ". $conn->connect_error);
@@ -118,7 +118,7 @@
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0){
                     while($row = $result->fetch_assoc()){
-                        echo $row["Employment"];   
+                        echo $row["employment"];   
                     }
                 } else {
                     echo "0 records";
@@ -129,7 +129,7 @@
         <div>
             Share Capital
             <?php
-                include "ses/connect.php";
+                include "phponly/connect.php";
                 $search = $_POST['search'];
                 if ($conn->connect_error){
                     die("Connection failed: ". $conn->connect_error);
@@ -138,7 +138,7 @@
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0){
                     while($row = $result->fetch_assoc()){
-                        echo $row["shares_amount"];   
+                        echo $row["share_balance"];   
                     }
                 } else {
                     echo "0 ";
@@ -149,16 +149,16 @@
         <div>
             Account Balance
             <?php
-                include "ses/connect.php";
+                include "phponly/connect.php";
                 $search = $_POST['search'];
                 if ($conn->connect_error){
                     die("Connection failed: ". $conn->connect_error);
                 }
-                $sql = "SELECT * FROM accounts WHERE member_id LIKE '%$search%'";
+                $sql = "SELECT * FROM savings WHERE member_id LIKE '%$search%'";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0){
                     while($row = $result->fetch_assoc()){
-                        echo $row["account_balance"];   
+                        echo $row["savings_balance"];   
                     }
                 } else {
                     echo "0";
@@ -169,7 +169,7 @@
         <div>
             Loan Balance
             <?php
-                include "ses/connect.php";
+                include "phponly/connect.php";
                 $search = $_POST['search'];
                 if ($conn->connect_error){
                     die("Connection failed: ". $conn->connect_error);
@@ -178,7 +178,7 @@
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0){
                     while($row = $result->fetch_assoc()){
-                        echo $row["loan_amount"];   
+                        echo $row["amount"];   
                     }
                 } else {
                     echo "0";
