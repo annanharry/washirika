@@ -1,3 +1,10 @@
+<?php
+    include "phponly/connect.php";
+
+
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +28,9 @@
             grid-area: 1/1/2/3;
             text-align: center;
         }
+        .item3 {
+            grid-area: 3/1/4/3;
+        }
         .item2 {
             grid-area: 2/1/3/3;
             text-align: center;
@@ -40,10 +50,18 @@
                 Loan Application Form
             </div>
             <div class="item3">
-                <label for="">Loan type</label>             
-            </div>
-            <div class="item4">
-                <input type="text" name="loan_type" >
+                <label for="type">Loan type</label>
+                <select name="type" id="">
+                    <?php
+                        include "phponly/connect.php";
+                        $sql = "SELECT type FROM loan_type";
+                        //loop to fetch data
+                        echo "<option name='loan' value=''>Loan type</option>";
+                        foreach ($conn->query($sql) as $row) {
+                            echo "<option value=$row[id]>$row[type]</option>";
+                        }
+                    ?>
+                </select>
             </div>
             <div>
                 <label for="limit">Limit</label>
