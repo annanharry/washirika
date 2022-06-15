@@ -1,6 +1,6 @@
 <?php
 
-include "ses/connect.php";
+include "phponly/connect.php";
 
 $search = $_POST['search'];
 

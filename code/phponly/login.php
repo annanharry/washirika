@@ -19,11 +19,11 @@
         if ($count == 1){
             $_SESSION['login_user'] = $username;
 
-            header("location: ../search.php");
+            header("location: ../tellerdash.html");
         }
     }else{
         $error="The Username or Password is invalid";
     }
 
-    header("location:../search.php");
+    //header("location:../search.php");
 ?>
