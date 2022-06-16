@@ -1,3 +1,10 @@
+<?php
+    include ("phponly/connect.php");
+    session_start();
+
+    $search = $_POST['search'];
+    $_SESSION['search_id'] = $search;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,7 +77,8 @@
             Member ID:
             <?php
                 include "phponly/connect.php";
-                $search = $_POST['search'];
+                $search = $_SESSION['search_id'];
+                //$search = $_POST['search'];
                 if ($conn->connect_error){
                     die("Connection failed: ". $conn->connect_error);
                 }
