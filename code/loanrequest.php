@@ -2,7 +2,7 @@
     include "phponly/connect.php";
     session_start();
 
-    
+    $member = $_SESSION['search_id'];
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +53,6 @@
                 <label for="type">Loan type</label>
                 <select name="type" id="">
                     <?php
-                        include "phponly/connect.php";
                         $sql = "SELECT type FROM loan_type";
                         //loop to fetch data
                         echo "<option name='loan' value=''>Loan type</option>";
@@ -68,6 +67,23 @@
             </div>
             <div>
                 Ksh.
+                <?php
+                    //$member = $_SESSION['search_id'];
+                    $sql = "SELECT * FROM savings WHERE member_id LIKE '%$member%'";
+                    $result = $conn->query($sql);
+                    $row = $result->fetch_assoc();
+                    $savings = $row["savings_balance"];
+
+                    $sql1 = "SELECT * FROM shares WHERE member_id LIKE '%$member%'";
+                    $result1 = $conn->query($sql1);
+                    $row1 = $result1->fetch_assoc();
+                    $shares = $row1["share_balance"];
+
+                    //loan limit
+                    $limit = ($savings + $shares)* 3;
+
+                    echo $limit;
+                ?>
             </div>
             <div class="item5">
                 Amount requested

@@ -76,7 +76,7 @@
         <div>
             Member ID:
             <?php
-                include "phponly/connect.php";
+                //include "phponly/connect.php";
                 $search = $_SESSION['search_id'];
                 //$search = $_POST['search'];
                 if ($conn->connect_error){
