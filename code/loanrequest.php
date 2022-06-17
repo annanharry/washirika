@@ -22,7 +22,7 @@
         }
         .grid-container > div {
             background-color: #d6f5f5;
-            height: 30px;
+            height: 40px;
         }
         .item1 {
             grid-area: 1/1/2/3;
