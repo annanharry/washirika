@@ -41,7 +41,7 @@
     </style>
 </head>
 <body>
-    <form action="loanlimit.php" method="POST">
+    <form action="guarantors.php" method="POST">
         <div class="grid-container">
             <div class="item1">
                 Washirika SACCO
@@ -51,7 +51,7 @@
             </div>
             <div class="item3">
                 <label for="type">Loan type</label>
-                <select name="type" id="">
+                <select name="type" id="loanType">
                     <?php
                         $sql = "SELECT type FROM loan_type";
                         //loop to fetch data
@@ -93,6 +93,10 @@
             </div>
             <div>
                 Instalments
+                <!--<script> FUTURE js UPDATES.
+                    var loanType = document.getElementById("loanType");
+                    document.write(loanType);
+                </script>-->
             </div>
             <div>
                 Ksh.
