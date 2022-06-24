@@ -7,7 +7,7 @@
     $loan_type = $_POST['type'];
     $loan_amount = $_POST['loanrequest'];
 
-    echo $member;
+    //echo $member;
     echo $loan_type;
     echo $loan_amount;
 ?>
