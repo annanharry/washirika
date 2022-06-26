@@ -56,14 +56,14 @@
                 Loan Application Form
             </div>
             <div class="item3">
-                <label for="type">Loan type</label>
+                <label for="loan_type">Loan type</label>
                 <select name="loan_type" id="loanType">
                     <?php
                         $sql = "SELECT type FROM loan_type";
                         //loop to fetch data
                         echo "<option value=''>Loan type</option>";
                         foreach ($conn->query($sql) as $row) {
-                            echo "<option value=$row[id]>$row[type]</option>";
+                            echo "<option value=$row[loan_type_id]>$row[type]</option>";
                         }
                     ?>
                 </select>

@@ -9,5 +9,5 @@
 
     //echo $member;
     echo $loan_type;
-    echo $loan_amount;
+    //echo $loan_amount;
 ?>
