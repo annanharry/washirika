@@ -4,7 +4,7 @@
 
     //post the loan amount and type, before guarantors update is made.
     $member = $_SESSION['search_id'];
-    $loan_type = $_POST['type'];
+    $loan_type = $_POST['loan_type'];
     $loan_amount = $_POST['loanrequest'];
 
     //echo $member;

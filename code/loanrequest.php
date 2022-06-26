@@ -57,11 +57,11 @@
             </div>
             <div class="item3">
                 <label for="type">Loan type</label>
-                <select name="type" id="loanType">
+                <select name="loan_type" id="loanType">
                     <?php
                         $sql = "SELECT type FROM loan_type";
                         //loop to fetch data
-                        echo "<option name='loan' value=''>Loan type</option>";
+                        echo "<option value=''>Loan type</option>";
                         foreach ($conn->query($sql) as $row) {
                             echo "<option value=$row[id]>$row[type]</option>";
                         }
