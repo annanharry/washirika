@@ -59,7 +59,7 @@
                 <label for="loan_type">Loan type</label>
                 <select name="loan_type" id="loanType">
                     <?php
-                        $sql = "SELECT type FROM loan_type";
+                        $sql = "SELECT * FROM loan_type";
                         //loop to fetch data
                         echo "<option value=''>Loan type</option>";
                         foreach ($conn->query($sql) as $row) {
