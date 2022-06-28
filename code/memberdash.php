@@ -2,8 +2,11 @@
     include ("phponly/connect.php");
     session_start();
 
-    //$search = $_POST['search'];
-    //$_SESSION['search_id'] = $search;
+    $member = $_SESSION['search_id'];
+
+    if ($conn->connect_error){
+        die("Connection failed: ". $conn->connect_error);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,13 +79,7 @@
         <div>
             Member ID:
             <?php
-                //include "phponly/connect.php";
-                $search = $_SESSION['search_id'];
-                //$search = $_POST['search'];
-                if ($conn->connect_error){
-                    die("Connection failed: ". $conn->connect_error);
-                }
-                $sql = "SELECT * FROM members WHERE member_id LIKE '%$search%'";
+                $sql = "SELECT * FROM members WHERE member_id LIKE '%$member%'";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0){
                     while($row = $result->fetch_assoc()){
@@ -91,19 +88,14 @@
                 } else {
                     echo "0 records";
                 }
-                $conn->close();
             ?>
         </div>
         <div>
             Name:
             <?php
-                include "phponly/connect.php";
-                $search = $_POST['search'];
                 if ($conn->connect_error){
                     die("Connection failed: ". $conn->connect_error);
                 }
-                $sql = "SELECT * FROM members WHERE member_id LIKE '%$search%'";
-                $result = $conn->query($sql);
                 if ($result->num_rows > 0){
                     while($row = $result->fetch_assoc()){
                         echo $row["name"];   
@@ -111,19 +103,11 @@
                 } else {
                     echo "0 records";
                 }
-                $conn->close();
             ?>
         </div>
         <div>
             Employment:
             <?php
-                include "phponly/connect.php";
-                $search = $_POST['search'];
-                if ($conn->connect_error){
-                    die("Connection failed: ". $conn->connect_error);
-                }
-                $sql = "SELECT * FROM members WHERE member_id LIKE '%$search%'";
-                $result = $conn->query($sql);
                 if ($result->num_rows > 0){
                     while($row = $result->fetch_assoc()){
                         echo $row["employment"];   
@@ -131,18 +115,15 @@
                 } else {
                     echo "0 records";
                 }
-                $conn->close();
             ?>
         </div>
         <div>
             Share Capital
             <?php
-                include "phponly/connect.php";
-                $search = $_POST['search'];
                 if ($conn->connect_error){
                     die("Connection failed: ". $conn->connect_error);
                 }
-                $sql = "SELECT * FROM shares WHERE member_id LIKE '%$search%'";
+                $sql = "SELECT * FROM shares WHERE member_id LIKE '%$member%'";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0){
                     while($row = $result->fetch_assoc()){
@@ -151,18 +132,15 @@
                 } else {
                     echo "0 ";
                 }
-                $conn->close();
             ?>
         </div>
         <div>
             Account Balance
             <?php
-                include "phponly/connect.php";
-                $search = $_POST['search'];
                 if ($conn->connect_error){
                     die("Connection failed: ". $conn->connect_error);
                 }
-                $sql = "SELECT * FROM savings WHERE member_id LIKE '%$search%'";
+                $sql = "SELECT * FROM savings WHERE member_id LIKE '%$member%'";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0){
                     while($row = $result->fetch_assoc()){
@@ -171,27 +149,19 @@
                 } else {
                     echo "0";
                 }
-                $conn->close();
             ?>
         </div>
         <div>
             Loan Balance
             <?php
-                include "phponly/connect.php";
-                $search = $_POST['search'];
                 if ($conn->connect_error){
                     die("Connection failed: ". $conn->connect_error);
                 }
-                $sql = "SELECT * FROM loans WHERE member_id LIKE '%$search%'";
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0){
-                    while($row = $result->fetch_assoc()){
-                        echo $row["amount"];   
-                    }
-                } else {
-                    echo "0";
-                }
-                $conn->close();
+                $sql = "SELECT SUM(amount) FROM loans WHERE member_id = $member";
+                $result = mysqli_query($conn,$sql);
+                while ($row = mysqli_fetch_array($result)) {
+                    echo $row['SUM(amount)'];
+                } 
             ?>
         </div>
         <div class="dropdown">
@@ -219,3 +189,6 @@
     </div>
 </body>
 </html>
+<?php
+    $conn->close();
+?>
