@@ -19,5 +19,5 @@
     $sql = mysqli_query($conn, "INSERT INTO loans(member_id, loan_type_id, amount, instalments) 
                                     VALUES ('$member','$loan_type','$new_loan_amount','$instalments')");
 
-    echo "check database";
+    header ("location: ");
 ?>
