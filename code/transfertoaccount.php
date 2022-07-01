@@ -1,18 +1,18 @@
 <?php
 
-include "ses/connect.php";
+    include "phponly/connect.php";
+    session_start();
 
-$memberid = $_POST['memberid'];
-$amount = $_POST['amount'];
+    $memberid = $_SESSION['search_id'];
+    $amount = $_POST['amount'];
 
-$sql = mysqli_query($conn, "UPDATE shares
-                            SET shares_amount = shares_amount - '$amount'
-                            WHERE member_id = '$memberid'
-                            ");
+    $sql = mysqli_query($conn, "UPDATE shares
+                                SET share_balance = share_balance - '$amount'
+                                WHERE member_id = '$memberid'");
 
-$sql = mysqli_query($conn, "UPDATE accounts 
-                            SET account_balance = account_balance + '$amount'
-                            WHERE member_id = '$memberid'");
+    $sql = mysqli_query($conn, "UPDATE savings 
+                                SET savings_balance = savings_balance + '$amount'
+                                WHERE member_id = '$memberid'");
 
-header("location:withdrawshare.php");
+    header("location:withdrawshare.php");
 ?>

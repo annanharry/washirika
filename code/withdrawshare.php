@@ -1,3 +1,9 @@
+<?php
+    include "phponly/connect.php";
+    session_start();
+
+    $member = $_SESSION['search_id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,10 +69,34 @@
                 Transfer to Account
             </div>
             <div>
-                <label for="memberid">Member ID</label>
+                <label for="member_name">Member Name</label>
             </div>
             <div>
-                <input type="text" name="memberid" placeholder="Member ID">
+                <!--<input type="text" name="member_name" placeholder="Member ID">-->
+                <?php
+                    $namesql = "SELECT name FROM members WHERE member_id=$member";
+                    $nameresult = mysqli_query($conn,$namesql);
+                    if ($nameresult->num_rows > 0){
+                        while ($row = $nameresult-> fetch_assoc()) {
+                            echo $row["name"];
+                        }
+                    }
+                ?>
+            </div>
+            <div>
+                Available amount
+            </div>
+            <div>
+                Ksh.
+                <?php
+                    $amountsql = "SELECT share_balance FROM shares WHERE member_id=$member";
+                    $amountresult = mysqli_query($conn,$amountsql);
+                    if ($amountresult->num_rows > 0){
+                        while ($row = $amountresult-> fetch_assoc()){
+                            echo $row["share_balance"];
+                        }
+                    }
+                ?>
             </div>
             <div>
                 <label for="amount">Amount</label>
