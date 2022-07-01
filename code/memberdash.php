@@ -96,9 +96,11 @@
                 if ($conn->connect_error){
                     die("Connection failed: ". $conn->connect_error);
                 }
-                if ($result->num_rows > 0){
-                    while($row = $result->fetch_assoc()){
-                        echo $row["name"];   
+                $namesql = "SELECT name FROM members WHERE member_id=$member";
+                $nameresult = $conn->query($namesql);
+                if ($nameresult->num_rows > 0){
+                    while($namerow = $result->fetch_assoc()){
+                        echo $namerow["name"];   
                     }
                 } else {
                     echo "0 records";
