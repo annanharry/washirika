@@ -1,12 +1,12 @@
 <?php
+include "phponly/connect.php";
+session_start();
 
-include "ses/connect.php";
-
-$memberid = $_POST['memberid'];
+$memberid = $_SESSION['search_id'];
 $amount = $_POST['amount'];
 
-$sql = mysqli_query($conn, "UPDATE accounts
-                            SET account_balance = account_balance - '$amount'
+$sql = mysqli_query($conn, "UPDATE savings
+                            SET savings_balance = savings_balance - '$amount'
                             WHERE member_id = '$memberid'");
 
 header("location:withdraw.php");
