@@ -167,8 +167,8 @@
         <div class="dropdown">
             <button class="dropbtn">Withdraw</button>
             <Div class="dropdown-content">
-                <a href="withdraw.php">From Shares</a>
-                <a href="withdrawshare.php">From Account</a>
+                <a href="withdrawshare.php">From Shares</a>
+                <a href="withdraw.php">From Account</a>
             </Div> 
         </div>
         <div class="dropdown">
