@@ -1,3 +1,9 @@
+<?php
+    include "phponly/connect.php";
+    session_start();
+
+    $member = $_SESSION['search_id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,16 +69,38 @@
                 Withdraw Account
             </div>
             <div>
-                <label for="memberid">Member ID</label>
+                <label for="memberid">Member Name</label>
             </div>
             <div>
-                <input type="text" name="memberid" placeholder="Member ID">
+                <?php
+                $namesql = "SELECT name FROM members WHERE member_id=$member";
+                $nameresult = $conn->query($namesql);
+                if ($nameresult->num_rows > 0){
+                    while ($row = $nameresult->fetch_assoc()){
+                        echo $row['name'];
+                    }
+                } else {
+                    echo "0 records";
+                }
+                ?>
             </div>
             <div>
                 <label for="account_balance">Account Balance</label>
             </div>
             <div>
-                <p>Ksh. </p>
+                <p>Ksh. 
+                    <?php
+                        $amountsql = "SELECT savings_balance FROM savings WHERE member_id=$member";
+                        $amountresult = $conn->query($amountsql);
+                        if ($amountresult->num_rows > 0){
+                            while ($row = $amountresult->fetch_assoc()){
+                                echo $row['savings_balance'];
+                            }
+                        } else {
+                            echo "0 records";
+                        }
+                    ?>
+                </p>
             </div>
             <div>
                 <label for="amount">Amount</label>
