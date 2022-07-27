@@ -1,0 +1,7 @@
+COLUMN 'EmployerName'
+1 TEACHERS SERVICE COMMISSION
+0 Other, not TEACHERS SERVICE COMMISSION
+
+COLUMN  'Boundery'
+0 'Non-performing'
+1 'Performing'
