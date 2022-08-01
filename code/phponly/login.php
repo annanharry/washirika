@@ -12,7 +12,6 @@
         $sql = "SELECT staff_id FROM staff WHERE username = '$username' AND password = '$md5password'";
         $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-        $active = $row['active'];
 
         $count = mysqli_num_rows($result);
 
@@ -25,5 +24,5 @@
         $error="The Username or Password is invalid";
     }
 
-    //header("location:../search.php");
+    header("location:../tellerdash.php");
 ?>
