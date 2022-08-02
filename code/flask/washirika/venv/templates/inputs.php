@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="grid-container">
-        <form action="{{url_for('home')}}" method="POST">
+        <form action="{{url_for('Home')}}" method="POST">
             <div class="item1">Washirika SACCO</div>
             <div class="itme2">Check Loan Recommendation</div>
             <div>Member ID</div>

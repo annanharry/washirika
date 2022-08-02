@@ -7,11 +7,11 @@ app = Flask(__name__)
 #pickle model
 model = pickle.load(open("D:\Xampp\htdocs\washirika-1\code\Flask\washirika\Venv\model.pkl", "rb"))
 
-@app.route("/")
+@app.route("/", methods=['GET','POST'])
 def Home():
     return render_template("inputs.php")
 
-@app.route("/predict", method=['POST'])
+@app.route("/predict", methods=['POST'])
 def Predict():
     data1 = request.form['loan']
     data2 = request.form['employer']
@@ -21,4 +21,4 @@ def Predict():
     return render_template("result.php", data=pred)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
