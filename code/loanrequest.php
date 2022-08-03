@@ -111,6 +111,7 @@
             <div class="item7">
                 <input type="submit" value="Apply">
             </div>
+            <div><a href="http://localhost:5000/">Check Legibility</a></div>
         </div>
     </form>
 </body>
