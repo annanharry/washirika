@@ -1,12 +1,12 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
-from sklearn import *
+#from sklearn import *
 
 app = Flask(__name__)
 
 #pickle model
-model = pickle.load(open("D:\Xampp\htdocs\washirika-1\code\Flask\washirika\Venv\model.pkl", "rb"))
+model = pickle.load(open("D:\Xampp\htdocs\washirika\code\Flask-code\model.pkl", "rb"))
 
 @app.route("/")
 def main():
